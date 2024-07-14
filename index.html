@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Classification Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i> Hackaholics
+            </div>
+            
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Classify Your URL</h1>
+            <p>Enter a URL below to determine if it is safe or malicious.</p>
+            <form action="/predict" method="post">
+                <input type="text" name="url" placeholder="Enter URL here" required>
+                <button type="submit">Classify</button>
+            </form>
+            {% if prediction_text %}
+                <div class="result">
+                    <p>{{ prediction_text }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 URL Classifier. All rights reserved.</p>
+            <ul class="social">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fab fa-github"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
